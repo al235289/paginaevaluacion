@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/inicio_sesion.css">
+    <title>Document</title>
+</head>
+<body>
+     <header>
+      <div class="logotipo">
+        <img src="img/union.png" alt="">
+        
+      </div>
+      <div>
+        <h1>C.A.M.E</h1>
+      </div>
+    </header>
+    <main>
+       <div class="inicio-sesion">
+    <h1>Crear Cuenta</h1>
+    <form onsubmit="redirigirALogin(event)"> <!-- Apunte #1: Aqui puse un event, para mejorar el registro con una libreria externa de animaciones. PD: si funciona, yupiiii!! -->
+        <input type="text" name="username" placeholder="Nombre y Apellido" required>
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="Correo Institucional" 
+            pattern="^[a-zA-Z0-9._%+\-]+@alumnos\.uacj\.mx$"  
+            title="Por favor, usa tu correo institucional que termina en @alumnos.uacj.mx"
+            required> <!-- En la etiqueta de pattern la utilice para forzar a los usuarios a usar su correo institucional -->
+            
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <a href="index.html">Ya tengo una cuenta</a>
+</div>
+<div id="ventana-verificacion" class="modal-fondo">
+    <div class="modal-caja">
+        <h2>Verificar Correo</h2>
+        <p>Ingresa el código que enviamos a tu bandeja.</p>
+        
+        <form onsubmit="verificarCodigo(event)">
+            <div class="codigo-contenedor">
+    <input type="text" class="codigo-input" maxlength="1" pattern="\d*" inputmode="numeric">
+    <input type="text" class="codigo-input" maxlength="1" pattern="\d*" inputmode="numeric">
+    <input type="text" class="codigo-input" maxlength="1" pattern="\d*" inputmode="numeric">
+    <input type="text" class="codigo-input" maxlength="1" pattern="\d*" inputmode="numeric">
+</div>
+            <button type="submit">Validar Código</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/main.js"></script>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Esto de aquí es una librería externa de animaciones que encontré el YouTube, al parecer el SAT también la usa -->
+   <script src="js/main.js"></script>
+   <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDf7ao3ktug_iU70CCaZeVi82RBSw62Zqw",
+    authDomain: "came-8cbf2.firebaseapp.com",
+    projectId: "came-8cbf2",
+    storageBucket: "came-8cbf2.firebasestorage.app",
+    messagingSenderId: "955648360261",
+    appId: "1:955648360261:web:e308ec5abc4b880565882c"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+</body>
+</html>

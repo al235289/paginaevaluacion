@@ -1,0 +1,586 @@
+/* Aqui empieza el CSS global y reseteo */
+*{              
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;         
+    background-color: #f9f9f9; 
+
+}
+
+/* Aqui empieza el CSS del header */
+header{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    color: black;
+    border-bottom: 2px solid #c5c5c5;
+}
+
+header .logotipo img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+header .cerrar_sesion {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-left: auto;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+header .cerrar_sesion:hover {
+    transform: scale(1.1);
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+}
+
+header h1{
+    margin-left: 20px;
+}
+
+.cerrar_pc{
+    display: none;
+}
+
+.cerrar_mobile{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+}
+
+/* Aqui empieza el CSS del main y contenedores */
+main{
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+ .principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 480px; 
+ }
+
+/* Aqui empieza el CSS de las opciones de menu */
+.opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.opciones div{
+    background-color: #003CA6;
+    color: white;
+    padding: 30px;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 14px;
+}
+
+.opciones img{
+    width: 300px;
+    height: 220px;
+    object-fit: contain;
+}
+
+.opciones div h2, .opciones div p{
+    margin-bottom: 10px;
+}
+
+ .opciones a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.opciones a:hover{
+    transform: scale(1.06);
+    transition: transform 0.5s ease;
+}
+
+/* Aqui empieza el CSS de la lista de publicaciones */
+.btn-principal-came {
+    background-color: #003CA6;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.tarjeta-gestion {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+    gap: 15px;
+    width: 100%;
+}
+
+.foto-min img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.detalles-min {
+    flex: 1;
+    text-align: left;
+}
+
+.btn-eliminar {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Aqui empieza el CSS del Modal y Formulario de creacion */
+#modal-donar.modal-fondo {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-modal {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.x-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+}
+
+.formulario-crear {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.formulario-crear label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+}
+
+.formulario-crear input, 
+.formulario-crear select, 
+.formulario-crear textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.formulario-crear input[type="file"] {
+    padding: 10px;
+    background: #f9f9f9;
+    border: 2px dashed #ddd;
+}
+
+.formulario-crear button[type="submit"] {
+    background-color: #003CA6;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Aqui empieza el CSS de la lógica de venta */
+.grupo-input-checkbox {
+   display: flex;
+    flex-direction: row;      /* Forzamos que sea fila */
+    align-items: center;      /* Centramos verticalmente el cuadrito con el texto */
+    justify-content: flex-start; /* PEGADOS A LA IZQUIERDA */
+    gap: 8px;                 /* El único espacio que habrá entre ellos */
+    width: 100%;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.grupo-input-checkbox input[type="checkbox"] {
+    width: 18px;              /* Tamaño fijo para que no se deforme */
+    height: 18px;
+    margin: 0;                /* Quitamos márgenes extraños */
+    flex-shrink: 0;           /* Evita que el cuadrito se aplaste si el texto es largo */
+}
+
+.grupo-input-checkbox label {
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0;                /* Quitamos márgenes que lo separen del input */
+}
+
+#contenedor-precio {
+    border-left: 4px solid #003CA6;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Aqui empieza el CSS del anuncio de éxito */
+#modal-exito.modal-fondo {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.anuncio-exito {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 16px;
+    width: 85%;
+    max-width: 400px;
+}
+
+.icono-check {
+    width: 70px;
+    height: 70px;
+    background-color: #28a745;
+    color: white;
+    font-size: 40px;
+    line-height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.opciones-post-publicacion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo para las tarjetas de dudas */
+.tarjeta-duda {
+    background-color: #f0f4ff;
+    border-left: 5px solid #003CA6;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: left; /* Para que la duda sea legible */
+}
+
+.tarjeta-duda p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.tarjeta-duda .autor {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.btn-responder {
+    background-color: #003CA6;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Aqui empieza el CSS del footer */
+footer{
+    background-color: #003CA6;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    height: 80px;
+} 
+
+
+.publicacion{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tarjeta-publicacion {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tarjeta-publicacion img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.tarjeta-publicacion h3 {
+    margin-top: 10px            ;
+    font-size: 20px;
+}
+
+.tarjeta-publicacion p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #555;
+}
+
+.tarjeta-publicacion .btn-comentar {
+    margin-top: 15px;
+}
+
+
+
+.btn-comentar {
+    background-color: #003CA6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.usuario_info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+.usuario_info img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.usuario_info .nombre_usuario {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* SECCION TABLET (768px) */
+
+@media (min-width: 768px) {
+    /* DETALLE: Expandimos paddings para que el contenido respire en pantallas de tablet */
+    header { padding: 20px 80px; }
+    main { padding: 80px 40px; }
+
+    /* DETALLE: Forzamos la alineacion vertical en la seccion principal para evitar 
+       el error de amontonamiento lateral cuando se gestionan publicaciones */
+    .principal{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* DETALLE: Convertimos el menu en fila horizontal aprovechando el ancho de tablet */
+    .opciones {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* DETALLE: Estilizamos el contenedor de donaciones para que parezca una tarjeta central */
+    .principal:has(.formulario-crear) {
+        background-color: #ffffff;
+        padding: 50px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 650px;
+    }
+
+    /* DETALLE: Ajustamos los botones del anuncio de éxito para que se vean en fila horizontal */
+    .opciones-post-publicacion {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .anuncio-exito { padding: 50px; }
+    
+    .formulario-modal { max-width: 500px; }
+
+.grupo-input-checkbox {
+        justify-content: flex-start;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+    .grupo-input-checkbox label {
+        font-size: 16px;
+    }
+
+}
+
+
+
+/* SECCION PC (1024px) */
+
+@media (min-width: 1024px) {
+    /* DETALLE: Maximizamos el uso de pantalla en monitores amplios */
+    header { padding: 20px 120px; }
+    main { padding: 80px 60px; }
+
+    /* DETALLE: Transicion de visibilidad para el boton de cerrar sesion especifico de PC */
+    .cerrar_pc {
+        margin-left: auto; 
+        display: block;
+        font-size: 32px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+        
+    }
+    .cerrar_mobile { display: none; }
+
+    /* DETALLE: Activamos el diseño de DOS COLUMNAS para el formulario de donacion */
+    .formulario-crear {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 40px;
+    }
+
+    /* DETALLE: Forzamos a que el titulo y el boton ocupen las dos columnas del grid */
+    .principal:has(.formulario-crear) h1,
+    .formulario-crear button {
+        grid-column: 1 / 3;
+    }
+
+    /* DETALLE: Aumentamos el tamaño del modal para la vista de escritorio */
+    .formulario-modal { max-width: 800px; padding: 50px; }
+
+    /* DETALLE: Animacion de pulso para el icono de exito al publicar */
+    .icono-check { animation: pulseSuccess 2s infinite; }
+
+
+.seccion-venta-group {
+        grid-column: 1 / 3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-top: 1px solid #eee; /* Una línea sutil para separar */
+        padding-top: 20px;
+    }
+
+    /* DETALLE: El input de precio aparecerá justo debajo del checkbox
+       pero con un ancho controlado para que no se vea gigante. */
+    #contenedor-precio {
+        width: 50%;
+    }
+
+@keyframes pulseSuccess {
+    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(40, 167, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+    .contenedor-venta {
+        grid-column: 1 / 3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+
+    .grid-materiales {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .tarjeta-duda {
+        max-width: 600px;
+        margin: 20px auto; /* Centramos la duda en la pantalla grande */
+    }
+}
+

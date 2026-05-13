@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.A.M.E</title>
+    <link rel="stylesheet" href="css/inicio_sesion.css">
+</head>
+<body>
+    <header>
+      <div class="logotipo">
+        <img src="img/union.png" alt="">
+      </div>
+      <div>
+        <h1>C.A.M.E</h1>
+      </div>
+    </header>
+    <main>
+        <section class="inicio-sesion">
+            <div>
+                <h1>Iniciar Sesión</h1>
+                <form onsubmit="iniciarSesion(event)">
+                    <input type="email" name="email" placeholder="Correo Institucional" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <button type="submit">Ingresar</button>
+                    <p>¿Olvidaste tu contraseña?</p>
+                </form>
+            </div>
+            <br>
+            <a href="home.html">Pase</a>
+            <div>
+                    <h1>¿No tienes una cuenta?</h1>
+                    <a href="registro.html">Regístrate aquí</a>
+                </div>
+            
+        </section>
+            
+    
+    </main>
+    <footer>
+        <p>&copy; 2026 C.A.M.E. Todos los derechos reservados.</p>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Esto de aquí es una librería externa de animaciones que encontré el YouTube, al parecer el SAT también la usa -->
+   <script src="js/main.js"></script>
+   
+</body>
+</html>
